@@ -1,31 +1,162 @@
+@import "modern-normalize";
+
 :root {
     --main-color: green;
     --form-text-color: grey;
     --main-width: clamp(45ch, 50%, 75ch);
-    --main-font-size: clamp(1.5rem, 5vw, 3rem)
+    --main-font-size: clamp(1.5rem, 5vw, 3rem);
+    --color: #e6007e;
 }
 
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+    margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+    list-style: none;
+    padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+img {
+    display: block;
+    max-inline-size: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--main-color);
+}
+
+
 .container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container,
+.logo {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+}
+
+/* left portion */
+
+.picture {
+    background-image: url(Kaisa_48.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40vw;
+}
+
+.logo {
+    height: auto;
+    background-color: black;
+    position: relative;
+    top: 20vh;
+    gap: 1vw;
+    padding: 15px 0;
+    justify-content: center;
     align-items: center;
 }
 
-
-.text.p {
-    color:var(--main-color);
-    font-size: var(--main-font-size);
-    width: var(--main-width);
+h1 {
+    color: white;
 }
 
-.group {
-    display: flex;
-    flex-direction: column;
+.logo img {
+    height: 10vh; 
 }
 
-.name,
-.contact,
-.password {
+/* right portion */
+
+.right {
     display: flex;
-    gap: clamp(10px, 5%, 20px);
+    background-color: #000000;
+    flex-flow: column nowrap;
+    width: 60vw;
+    height: 100%;
+    justify-content: center;
+}
+
+.left {
+    padding-left: 3vw;
+}
+
+.text {
+    font-weight: 500;
+    width: 90%;
+    font-size: 1.2rem;
+}
+
+.remote-text {
+    margin: 40px 0 80px;
+}
+
+.form {
+    background-color: rgb(6, 6, 6);
+    box-shadow: 0 10px 20px -2px rgb(22, 22, 22);
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.input {
+    display: flex;
+    flex-flow: column wrap;
+    width: 40%;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    
+}
+
+.form-title {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--color)
+}
+
+button {
+    background-color: rgb(0, 0, 0);
+    color: var(--color);
+    font-weight: 700;
+    font-size: 1.2em;
+    border: 2px solid var(--color);
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin: 40px 0;
+}
+
+button:hover {
+    background-color: var(--color);
+    color:black;
+}
+
+.log-in {
+    gap: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color);
+    font-weight: 700;
+}
+
+a:hover {
+    color: white;
 }
